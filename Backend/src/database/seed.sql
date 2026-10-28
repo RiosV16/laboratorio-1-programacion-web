@@ -20,3 +20,19 @@ VALUES
     (2, 1, CURRENT_DATE, 3.8),
     (2, 3, CURRENT_DATE, 4.6),
     (3, 2, CURRENT_DATE, 4.0);
+
+-- Profesores
+INSERT INTO teachers (nombre, correo, especialidad)
+VALUES
+    ('María Rodríguez', 'maria.rodriguez@universidad.edu', 'Matemáticas'),
+    ('Juan Pérez', 'juan.perez@universidad.edu', 'Programación'),
+    ('Ana García', 'ana.garcia@universidad.edu', 'Bases de Datos')
+ON CONFLICT (correo) DO NOTHING;
+
+-- Aulas
+INSERT INTO classrooms (codigo, edificio, capacidad)
+VALUES
+    ('A101', 'Bloque A', 35),
+    ('B202', 'Bloque B', 40),
+    ('C303', 'Bloque C', 25)
+ON CONFLICT (codigo) DO NOTHING;
