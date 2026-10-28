@@ -1,0 +1,35 @@
+<section class="page">
+  <h1>Listado de aulas</h1>
+
+  <button type="button" (click)="loadClassrooms()">
+    Actualizar aulas
+  </button>
+
+  @if (loading) {
+    <p>Cargando aulas...</p>
+  } @else if (error) {
+    <p>{{ error }}</p>
+  } @else {
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Código</th>
+          <th>Edificio</th>
+          <th>Capacidad</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (classroom of classrooms; track classroom.id) {
+          <tr>
+            <td>{{ classroom.id }}</td>
+            <td>{{ classroom.codigo }}</td>
+            <td>{{ classroom.edificio }}</td>
+            <td>{{ classroom.capacidad }} estudiantes</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</section>

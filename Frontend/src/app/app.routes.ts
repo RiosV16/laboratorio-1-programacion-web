@@ -10,8 +10,18 @@ import { ClientCreateReservationPage } from './pages/client-create-reservation/c
 import { AgentEventsPage } from './pages/agent-events/agent-events.page';
 import { AgentReservationsPage } from './pages/agent-reservations/agent-reservations.page';
 import { AgentCreateEventPage } from './pages/agent-create-event/agent-create-event.page';
+import { TeachersComponent } from './pages/teachers/teachers';
+import { ClassroomsComponent } from './pages/classrooms/classrooms';
 
 export const routes: Routes = [
+    {
+  path: 'teachers',
+  component: TeachersComponent
+},
+{
+  path: 'classrooms',
+  component: ClassroomsComponent
+},
     {
         path: "login",
         component: LoginPage
